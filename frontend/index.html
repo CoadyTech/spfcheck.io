@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="reset.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
+    <script src="logic.js" async></script>
+    <title>SPFcheck.io | Easily check SPF records</title>
+</head>
+
+<body>
+    <header>
+        <div class="top-menu">
+            <a class="logo" href="index.html">
+                <span>SPFcheck.io</span>
+            </a>
+            <nav>
+                <a href="">About</a>
+                <a href="">What is SPF?</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="banner-logo">
+            <span>SPFcheck.io</span>
+            <p>Easily check and lookup SPF records.</p>
+        </section>
+        <section id="domain-input-section">
+            <form onsubmit="javascript:return false">
+                <input  id="domain-name" type="text" placeholder="example.com" autofocus></input>
+                <button id="domain-submit">Check <span class="material-symbols-outlined">arrow_forward</span></button>
+            </form>
+        </section>
+        <section id="domain-result">
+
+        </section>
+    </main>
+    <footer>
+        <p>A tool by <a href="https://coady.tech/">Coady.Tech</a> | Powered by AWS</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,189 @@
+body {
+    background-color: #fff;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background-color: #3E7FFE;
+    height: 60px;
+    width: 100%;
+}
+
+.top-menu {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1160px;
+    height: 100%;
+}
+
+.logo {
+    height: 100%;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    text-decoration: none;
+}
+
+.logo span {
+    display: flex;
+    font-size: 38px;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: 'Righteous', cursive
+}
+
+nav {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: auto;
+}
+
+nav a {
+    margin: 0 16px;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+nav a:active {
+    color: #a8a8a8;
+}
+
+main {
+    width: 1160px;
+    margin: auto;
+    padding-top: 40px;
+    padding-bottom: 12em;
+}
+
+#banner-logo {
+    margin: 8rem auto 2rem auto;
+    width: 50%;
+    text-align: center;
+}
+
+#banner-logo span {
+    font-family: 'Righteous', cursive;
+    font-size: 92px;
+    color: #3E7FFE;
+}
+
+#banner-logo p {
+    color: #454545;
+    letter-spacing: 1px;
+}
+
+#domain-input-section {
+    display: flex;
+    margin: 0 auto;
+    width: 60%;
+    background-color: #fdfdfd;
+}
+
+#domain-input-section form {
+    display: flex;
+    width: 100%;
+}
+
+#domain-input-section form input {
+    width: 100%;
+    height: 48px;
+    border: 1px solid #3E7FFE;
+    border-radius: 8px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    padding-left: 20px;
+    margin: 0 5px 0 0;
+}
+
+#domain-input-section form input[type=text] {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+#domain-input-section form button {
+    background: #3E7FFE;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: 0px;
+    border-radius: 8px;
+    width: 160px;
+    margin: 0 0 0 5px;
+    vertical-align: middle;
+}
+
+#domain-input-section form button:hover {
+    background: #4298fb;
+}
+
+#domain-input-section form button:active {
+    background: #1947a3;
+    transform: scale(0.98);
+}
+
+#domain-input-section form button span {
+    vertical-align: middle;
+}
+
+#domain-input-section form button:hover {
+    cursor: pointer;
+}
+
+footer {
+  color: #a8a8a8;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+footer a {
+    color: #a8a8a8;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+#domain-result {
+    margin-top: 60px;
+    width: 100%;
+}
+
+#domain-result p {
+    text-align: center;
+}
+
+#domain-result-success {
+    color: green;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+#domain-result-fail {
+    color: red;
+    font-size: 20px;
+}
+
+#domain-result-spfrecord {
+    background-color: #898989;
+    color: white;
+    padding: 10px;
+    width: 50%;
+    border: #000 solid 1px;
+    margin: 10px auto 30px auto;
+}
