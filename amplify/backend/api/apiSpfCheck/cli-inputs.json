@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/": {
+      "name": "/",
+      "lambdaFunction": "spfcheckiod043eb99",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
