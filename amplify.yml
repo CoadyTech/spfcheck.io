@@ -9,3 +9,8 @@ frontend:
       - '**/*'
   cache:
     paths: []
+backend:
+  phases:
+    build:
+      commands:
+        - amplifyPush --simple
