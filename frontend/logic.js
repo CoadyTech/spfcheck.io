@@ -6,7 +6,7 @@ function domainInputValidator(domain) {
 
 /* Dump domain to the log and then call vewportOutput for DOM inject */
 async function domainSpfCheckApi(domainToCheck) {
-        const rawResponse = await fetch('https://8yrro8ap61.execute-api.eu-west-2.amazonaws.com/v1', {
+        const rawResponse = await fetch('https://cqi25h9ctk.execute-api.eu-west-2.amazonaws.com/main', {
           method: 'POST',
           headers: {
             'Accept': 'application/json',
