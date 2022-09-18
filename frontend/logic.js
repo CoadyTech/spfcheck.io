@@ -14,7 +14,9 @@ async function domainSpfCheckApi(domainToCheck) {
           },
           body: JSON.stringify({ domain: domainToCheck })
         });
+        document.getElementById('loader').style.display = 'block';
         const content = await rawResponse.json();
+        document.getElementById('loader').style.display = 'none';
         return content;
       };
 
