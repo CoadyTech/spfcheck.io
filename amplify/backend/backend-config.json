@@ -3,7 +3,13 @@
     "spfcheckiod043eb99": {
       "build": true,
       "providerPlugin": "awscloudformation",
-      "service": "Lambda"
+      "service": "Lambda",
+      "dependsOn": []
+    },
+    "spfcheckiolayer119c8661": {
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer",
+      "build": true
     }
   },
   "api": {
