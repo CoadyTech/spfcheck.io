@@ -6,6 +6,7 @@ function domainInputValidator(domain) {
 
 /* Dump domain to the log and then call vewportOutput for DOM inject */
 async function domainSpfCheckApi(domainToCheck) {
+        document.getElementById('loader').style.display = 'block';
         const rawResponse = await fetch('https://cqi25h9ctk.execute-api.eu-west-2.amazonaws.com/main', {
           method: 'POST',
           headers: {
@@ -14,7 +15,6 @@ async function domainSpfCheckApi(domainToCheck) {
           },
           body: JSON.stringify({ domain: domainToCheck })
         });
-        document.getElementById('loader').style.display = 'block';
         const content = await rawResponse.json();
         document.getElementById('loader').style.display = 'none';
         return content;
@@ -23,6 +23,8 @@ async function domainSpfCheckApi(domainToCheck) {
 /* Logic for DOM injecttion */
 function domainResultDomManipulator(domainResultJson) {
     if (domainResultJson.spfEnabled) {
+        document.getElementById('domain-result-success')?.remove();
+        document.getElementById('domain-result-spfrecord')?.remove();
         let domainResult = document.createElement('p');
         domainResult.id = 'domain-result-success';
         domainResult.innerHTML = `Good news! SPF is enabled for <strong>${domainResultJson.domain}</strong>`;
@@ -32,6 +34,7 @@ function domainResultDomManipulator(domainResultJson) {
         domainResultRaw.innerHTML = (domainResultJson.spfOutput);
         document.getElementById('domain-result').appendChild(domainResultRaw);
     } else {
+        document.getElementById('domain-result-fail')?.remove();
         domainResult.id = 'domain-result-fail';
         domainResult.innerHTML = `SPF is not enabled for <strong>${domainResultJson.domain}</strong>`;
         document.getElementById('domain-result').appendChild(domainResult);
