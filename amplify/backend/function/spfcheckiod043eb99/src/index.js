@@ -17,7 +17,7 @@ function spfCheck(domainValidated) {
 }
 
 function inputValidator(domain) {
-  let options = { require_tld: false, allow_underscores: false, allow_trailing_dot: false, allow_numeric_tld: false, allow_wildcard: false };
+  let options = { require_tld: false, allow_underscores: false, allow_trailing_dot: true, allow_numeric_tld: false, allow_wildcard: false };
   return validator.isFQDN(domain, options);
 }
 
@@ -46,7 +46,7 @@ exports.handler = async (event) => {
         "Access-Control-Allow-Headers": "*",
       },
       body: JSON.stringify({
-        error: "Invalid input",
+        error: "Invalid domain or syntax.",
       }),
     }
   };
