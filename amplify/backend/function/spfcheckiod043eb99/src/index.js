@@ -34,7 +34,7 @@ exports.handler = async (event) => {
       },
       body: JSON.stringify({
         spfEnabled: resultBool,
-        spfOutput: "string",
+        spfOutput: "SPF output coming soon",
         domain: jsonbody.domain,
       }),
     };
