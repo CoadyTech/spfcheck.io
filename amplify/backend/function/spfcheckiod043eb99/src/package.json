@@ -8,6 +8,7 @@
     "@types/aws-lambda": "^8.10.92"
   },
   "dependencies": {
-    "spf-validator": "^0.2.0"
+    "spf-validator": "^0.2.0",
+    "validator": "^13.7.0"
   }
 }
