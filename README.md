@@ -1,7 +1,7 @@
 # SPFcheck.io
 ![SPFcheck.io Logo](/logo.png?raw=true "SPFcheck.io")
 
-Hello! Welcome to my mini server less project, SPFcheck.io.  
+Hello! Welcome to my mini server less project, [SPFcheck.io](https://www.spfcheck.io/).  
 
 This software provides a no-nonsense website where engineers can check their domain names for correct and working email SPF record implementations.  
 
