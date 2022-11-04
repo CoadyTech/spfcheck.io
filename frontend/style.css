@@ -61,15 +61,14 @@ nav a:active {
 }
 
 main {
-    width: 1160px;
     margin: auto;
+    max-width: 1160px;
     padding-top: 40px;
     padding-bottom: 12em;
 }
 
 #banner-logo {
     margin: 8rem auto 2rem auto;
-    width: 50%;
     text-align: center;
 }
 
@@ -87,7 +86,7 @@ main {
 #domain-input-section {
     display: flex;
     margin: 0 auto;
-    width: 60%;
+    max-width: 600px;
     background-color: #fdfdfd;
 }
 
