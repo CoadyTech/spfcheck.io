@@ -43,7 +43,7 @@ async function domainSpfCheckApi(domainToCheck) {
   document.getElementById("loader").style.display = "none";
 }
 
-/* Logic for DOM injecttion */
+/* Logic for DOM injection */
 function domainResultDomManipulator(domainResultJson) {
   document.getElementById("domain-result-success")?.remove();
   document.getElementById("domain-result-spfrecord")?.remove();

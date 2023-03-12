@@ -1,31 +1,34 @@
-/**
- * @type {import('@types/aws-lambda').APIGatewayProxyHandler}
- */
-let spfValidator = require("spf-validator");
-let validator = require('validator');
+const dns = require("dns");
+const { promisify } = require("util");
+const dnsResolve = promisify(dns.resolveTxt);
+const validator = require("validator");
 
-function spfCheck(domainValidated) {
-  return new Promise((resolve, reject) => {
-    domainValidated.hasRecords((err, hasRecords) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve(hasRecords);
-      }
-    });
-  });
+function spfCheck(domain) {
+  return dnsResolve(domain)
+    .then((records) => {
+      let spfRecords = records.filter((record) =>
+        record[0].startsWith("v=spf1")
+      );
+      return spfRecords.length > 0 ? spfRecords[0].join(" ") : "";
+    })
+    .catch(() => "");
 }
 
 function inputValidator(domain) {
-  let options = { require_tld: false, allow_underscores: false, allow_trailing_dot: true, allow_numeric_tld: false, allow_wildcard: false };
+  let options = {
+    require_tld: false,
+    allow_underscores: false,
+    allow_trailing_dot: true,
+    allow_numeric_tld: false,
+    allow_wildcard: false,
+  };
   return validator.isFQDN(domain, options);
 }
 
 exports.handler = async (event) => {
   let jsonbody = JSON.parse(event.body);
   if (inputValidator(jsonbody.domain)) {
-    let domainValidated = await new spfValidator(jsonbody.domain);
-    let resultBool = await spfCheck(domainValidated);
+    let spfOutput = await spfCheck(jsonbody.domain);
     return {
       statusCode: 200,
       headers: {
@@ -33,8 +36,8 @@ exports.handler = async (event) => {
         "Access-Control-Allow-Headers": "*",
       },
       body: JSON.stringify({
-        spfEnabled: resultBool,
-        spfOutput: "SPF output coming soon",
+        spfEnabled: spfOutput !== "",
+        spfOutput: spfOutput,
         domain: jsonbody.domain,
       }),
     };
@@ -48,8 +51,6 @@ exports.handler = async (event) => {
       body: JSON.stringify({
         error: "Invalid domain or syntax.",
       }),
-    }
-  };
-
-
+    };
+  }
 };
