@@ -14,7 +14,7 @@ let jsonPromise = null;
 async function domainSpfCheckApi(domainToCheck) {
   document.getElementById("loader").style.display = "block";
   const rawResponse = fetch(
-    "https://cqi25h9ctk.execute-api.eu-west-2.amazonaws.com/main",
+    "API_URL_HERE",
     {
       method: "POST",
       headers: {
@@ -43,7 +43,7 @@ async function domainSpfCheckApi(domainToCheck) {
   document.getElementById("loader").style.display = "none";
 }
 
-/* Logic for DOM injection */
+/* Logic for DOM injecttion */
 function domainResultDomManipulator(domainResultJson) {
   document.getElementById("domain-result-success")?.remove();
   document.getElementById("domain-result-spfrecord")?.remove();

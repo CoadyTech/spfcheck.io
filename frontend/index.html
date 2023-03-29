@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link href="reset.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Roboto:wght@300;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0" />
-    <script src="logic.js" async></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" alt="Apple touch icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" alt="Favicon 32x32">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" alt="Favicon 16x16">    
+    <link rel="manifest" href="/site.webmanifest">
+    <script src="https://elegant-fifteen.spfcheck.io/script.js" data-site="OXWIOQJX" defer></script>
+    <script src="js/logic.js" async></script>
+    <script src="js/burgermenu.js" async></script>
+    <meta name="theme-color" content="#3e7ffe">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Easily check DNS SPF records from your web browser. Free, no ads, no spam." />
     <title>SPFcheck.io | Easily check SPF records</title>
 </head>
 
@@ -18,9 +28,9 @@
                 <span>SPFcheck.io</span>
             </a>
             <nav>
-                <a href="">About</a>
-                <a href="">What is SPF?</a>
-            </nav>
+                <a href="about.html" aria-label="About">About</a>
+                <a href="spf.html" aria-label="What is SPF?">What is SPF?</a>
+            </nav>            
         </div>
     </header>
 
@@ -31,9 +41,10 @@
         </section>
         <section id="domain-input-section">
             <form onsubmit="javascript:return false">
-                <input  id="domain-name" type="text" placeholder="example.com" autofocus></input>
+                <label for="domain-name" class="visually-hidden">Domain Name</label>
+                <input id="domain-name" type="text" placeholder="example.com" autofocus />
                 <button id="domain-submit">Check <span class="material-symbols-outlined">arrow_forward</span></button>
-            </form>
+            </form>            
         </section>
         <section id="domain-result">
             <div id="loader"></div>
